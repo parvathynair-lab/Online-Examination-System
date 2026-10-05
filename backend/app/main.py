@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from sqlalchemy import text
 from backend.app.database.connection import Base,engine
-from backend.app.models.user import User
+from backend.app.models import (User,Exam,Question,Attempt,Answer)
 app=FastAPI(title="Online Examination System",description="API for an online quiz and examination system",version="1.0.0")
 Base.metadata.create_all(bind=engine)
 @app.get("/")
